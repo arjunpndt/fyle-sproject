@@ -1,0 +1,101 @@
+body {
+  background-color: #f3f3f3;
+}
+.home {
+  margin-top: 55px;
+}
+
+/* navbar */
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: hsl(213, 30%, 93%);
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+.sidebar a {
+  display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+}
+
+/* .fyle-logo {
+  align-items: center;
+  margin: 5px;
+} */
+.sidebar a.active {
+  background-color: #308fbe;
+  color: white;
+}
+
+.sidebar tr:hover:not(.active) {
+  background-color: #80c1e2;
+  color: white;
+}
+
+.content {
+  margin-left: 210px;
+
+  padding: 1px 16px;
+  height: 1000px;
+}
+
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidebar a {
+    float: left;
+  }
+  div.content {
+    margin-left: 0;
+  }
+}
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+
+  text-align: center;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+/* .spinner_overlay {
+  background-color: #fff;
+  opacity: 0.2;
+  z-index: 1000;
+} */
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+}

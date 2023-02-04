@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/angular-route/angular-route.js"></script>
+    <script src="node_modules/ng-table/bundles/ng-table.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <script src="./myscript.js"></script>
+    <script src="./index.route.js"></script>
+    <script src="./src/subjects/subjectsdata.js"></script>
+    <!-- bootsrap -->
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="icon" href="./src/imgs/logo.svg" />
+    <title>Fyle- Library APP</title>
+  </head>
+
+  <body>
+    <!-- headar Code -->
+    <nav
+      class="navbar shadow-lg navbar-fixed-top sticky-top navbar-light bg-light"
+      style="background-color: rgb(152, 203, 247)"
+    >
+      <a href="#"
+        ><img
+          class="navbar-brand"
+          style="height: 70px"
+          src="./src/imgs/fylelogo.svg"
+          alt="fyle.img"
+      /></a>
+    </nav>
+    <!-- header close -->
+
+    <div ng-app="mainApp" style="margin-top: 70px">
+      <!-- sideNavbar -->
+      <div class="sidebar shadow-lg">
+        <a href="">
+          <h5 style="font-family: Arial Black"><b>POPULAR</b> SUBJECTS</h5>
+        </a>
+        <div style="padding-left: 5px; padding-right: 5px; margin-bottom: 5px">
+          <input
+            style="margin-right: 9px"
+            type="search"
+            class="form-control ds-input input1"
+            id="myInput"
+            onkeyup="myFunction()"
+            placeholder="Search Books.."
+          />
+        </div>
+
+        <table
+          id="myTable"
+          style="text-align: center; font-family: Franklin Gothic Medium"
+          class="table"
+        >
+          <tr>
+            <td><a href="#!Fiction">Fiction</a></td>
+          </tr>
+          <tr>
+            <td><a href="#!englishliterature">English literature</a></td>
+          </tr>
+          <tr>
+            <td><a href="#!classicfiction">Classic fiction</a></td>
+          </tr>
+          <tr>
+            <td><a href="#!drama">Drama</a></td>
+          </tr>
+          <tr>
+            <td><a href="#!moralcondition">Moral Conditions</a></td>
+          </tr>
+        </table>
+      </div>
+      <!-- sideNavbar close -->
+      <!-- main body -->
+      <div class="main content" ng-controller="mainCtrl">
+        <div>
+          <div
+            ng-if="!loader"
+            class="loader spinner_overlay"
+            style="margin-top: 300px; margin-left: auto; margin-right: auto"
+          ></div>
+        </div>
+        <div ng-if="loader" ng-view></div>
+      </div>
+      <!-- main body close -->
+    </div>
+  </body>
+</html>

@@ -1,0 +1,59 @@
+<div class="home">
+  <div
+    style="
+      background-color: rgb(152, 203, 247);
+      text-align: center;
+      border-radius: 2px;
+      padding: 5px;
+      color: white;
+      font-family: Franklin Gothic Medium;
+    "
+  >
+    <h1><b> COLLECTION OF ALL OUR BOOKS </b></h1>
+    <input
+      style="margin-right: 9px"
+      type="search"
+      class="form-control ds-input input1"
+      id="searchBook"
+      onkeyup="searchBar()"
+      placeholder="Search Book By Title or Author"
+    />
+  </div>
+  <table
+    id="homeTable"
+    ng-table="usersTable "
+    class="table table-striped table-bordered table-sm table-responsive"
+    cellspacing="0"
+    width="100%"
+    show-filter="true"
+    style="text-align: center; margin-top: 40px"
+  >
+    <tr ng-repeat="user in $data">
+      <td title="'Sno.'">{{$index+1}}</td>
+      <td
+        title="'Title and Sub Title'"
+        filter="{ title: 'text'}"
+        sortable="'title'"
+      >
+        {{user.title}}
+      </td>
+      <td title="'Author'" filter="{ name: 'text'}" sortable="'name'">
+        {{user.name[0]}}
+      </td>
+      <td
+        title="'Latest Publish Year '"
+        filter="{ latest_publish_yr: 'number'}"
+        sortable="'latest_publish_yr'"
+      >
+        {{user.latest_publish_yr[0]}}
+      </td>
+      <td
+        title="'First Publish Year '"
+        filter="{ first_publis_yr: 'number'}"
+        sortable="'first_publis_yr'"
+      >
+        {{user.first_publis_yr}}
+      </td>
+    </tr>
+  </table>
+</div>
