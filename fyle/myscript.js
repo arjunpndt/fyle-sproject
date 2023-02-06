@@ -113,7 +113,7 @@ app.controller(
         title: "The Alchemist",
         name: "Paulo Coelho",
         title1: "Lolita",
-        name1: "Margaret Atwood",
+        name1: "Vladimir Nabokov",
         latest: 2012,
         first: 1847,
       },
@@ -121,7 +121,7 @@ app.controller(
         title: "One Hundred Years of Solitude",
         name: "Roronoa Zoro",
         title1: "Chainsaw man",
-        name1: "Makima ",
+        name1: "Makima",
         latest: 2012,
         first: 1989,
       },
@@ -134,12 +134,36 @@ app.controller(
         first: 1985,
       },
       {
+        title: "Searching Of God",
+        name: "Makima",
+        title1: "Searching Of God",
+        name1: "Makima",
+        latest: 2012,
+        first: 1989,
+      },
+      {
+        title: "Lolita",
+        name: "Vladimir Nabokov",
+        title1: "The Handmaid's Tale",
+        name1: "Vladimir Nabokov",
+        latest: 2022,
+        first: 1989,
+      },
+      {
+        title: "The Handmaid's Tale",
+        name: "Margaret Atwood",
+        title1: "The Handmaid's Tale",
+        name1: "Margaret Atwood",
+        latest: 2019,
+        first: 1999,
+      },
+      {
         title: "Lolita",
         name: "Vladimir Nabokov",
         title1: "Searching Of God",
-        name1: "Vladimir Nabokov",
-        latest: 2012,
-        first: 1989,
+        name1: "Makima",
+        latest: 2015,
+        first: 1970,
       },
     ];
 
@@ -177,11 +201,11 @@ fun = function (params) {
 };
 
 // for input search of homepage
-searchBar = function (params) {
+searchBar = function (searchBar, usersTable) {
   var input, filter, table, tr, td1, td, i, txtValue;
-  input = document.getElementById("searchBook");
+  input = document.getElementById(searchBar);
   filter = input.value.toUpperCase();
-  table = document.getElementById("homeTable");
+  table = document.getElementById(usersTable);
   tr = table.getElementsByTagName("tr");
 
   // console.log(tr);

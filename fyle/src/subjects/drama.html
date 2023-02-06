@@ -9,13 +9,19 @@
       font-family: Franklin Gothic Medium;
     "
   >
-    <h1 ng-if="mylocation=='/Fiction'"><b> Fiction</b></h1>
-    <h1 ng-if="mylocation=='/englishliterature'"><b>English Literature</b></h1>
-    <h1 ng-if="mylocation=='/classicfiction'"><b>Classic Fiction</b></h1>
     <h1 ng-if="mylocation=='/drama'"><b>Drama</b></h1>
-    <h1 ng-if="mylocation=='/moralcondition'"><b>Moral Conditions</b></h1>
+
+    <input
+      style="margin-right: 9px"
+      type="search"
+      class="form-control ds-input input1"
+      id="searchBookDrama"
+      onkeyup="searchBar('searchBookDrama','dramaTable')"
+      placeholder="Search Book By Title or Author"
+    />
   </div>
   <table
+    id="dramaTable"
     ng-table="subjectTable"
     class="table table-striped table-bordered table-sm table-responsive"
     cellspacing="0"
@@ -27,12 +33,12 @@
       <td title="'Sno.'">{{$index+1}}</td>
       <td
         title="'Title and Sub Title'"
-        filter="{ title: 'text'}"
-        sortable="'title'"
+        filter="{ title1: 'text'}"
+        sortable="'title1'"
       >
         {{user.title1}}
       </td>
-      <td title="'Author'" filter="{ name: 'text'}" sortable="'name'">
+      <td title="'Author'" filter="{ name1: 'text'}" sortable="'name1'">
         {{user.name1}}
       </td>
       <td

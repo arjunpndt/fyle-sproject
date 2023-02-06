@@ -10,8 +10,17 @@
     "
   >
     <h1><b>Classic Fiction</b></h1>
+    <input
+      style="margin-right: 9px"
+      type="search"
+      class="form-control ds-input input1"
+      id="searchBookClassification"
+      onkeyup="searchBar('searchBookClassification','classificationTable')"
+      placeholder="Search Book By Title or Author"
+    />
   </div>
   <table
+    id="classificationTable"
     ng-table="subjectTable"
     class="table table-striped table-bordered table-sm table-responsive"
     cellspacing="0"
